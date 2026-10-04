@@ -1,5 +1,8 @@
 # CloudGate 2.0
 
+> **Real-Time AWS Security Gatekeeper & Compliance Engine**  
+> 🌐 **Official Website & Live Documentation:** [https://avinash-1819.github.io/Cloud-Gate/](https://avinash-1819.github.io/Cloud-Gate/)
+
 A real, dynamic, read-only AWS security auditing and gatekeeping tool. Connects to your AWS account with your credentials and scans its live configuration — IAM, S3, EC2/IMDS, security groups, CloudTrail, GuardDuty, KMS, VPC, root/MFA hygiene, and industry compliance standards — then reports risks in a rich, color-coded terminal UI.
 
 CloudGate 2.0 integrates **Prowler** as its next-stage engine, enabling deep compliance audits (CIS AWS Foundations Benchmark, NIST, ISO 27001, AWS Well-Architected Framework) alongside instant pre-logout security gates.
@@ -47,8 +50,9 @@ CloudGate 2.0 integrates **Prowler** as its next-stage engine, enabling deep com
 
 ```bash
 # Clone repository and enter directory
-git clone https://github.com/cloudgate-sec/cloudgate.git
-cd cloudgate
+git clone https://github.com/Avinash-1819/Cloud-Gate.git
+cd Cloud-Gate
+
 
 # Run 1-click installer (installs dependencies & sets up `cloudgate` CLI)
 chmod +x install.sh && ./install.sh
