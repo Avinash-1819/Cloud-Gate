@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudGate 2.0 — Real-Time AWS Security Gatekeeper & Compliance Engine</title>
+  <meta name="description" content="Download CloudGate 2.0: Instant read-only AWS security auditor and Prowler compliance gatekeeper. Catch misconfigurations before attackers do.">
+  <meta name="theme-color" content="#0a0d14">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Glow & Grid Canvas -->
+  <div class="bg-mesh"></div>
+  <div class="bg-grid"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" id="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <span class="brand-text">CloudGate <span class="badge-version">v2.0</span></span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#features" class="nav-link" id="nav-link-features">Features</a>
+        <a href="#levels" class="nav-link" id="nav-link-levels">Testing Levels</a>
+        <a href="#terminal-demo" class="nav-link" id="nav-link-demo">Live Demo</a>
+        <a href="#downloads" class="nav-link" id="nav-link-downloads">Downloads</a>
+        <a href="#setup" class="nav-link" id="nav-link-setup">Docs</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#downloads" class="btn btn-sm btn-primary" id="nav-btn-download">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span>Download</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-content">
+      <div class="hero-pill" id="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>Next-Gen AWS Security Gatekeeper • Powered by Prowler 5.40</span>
+      </div>
+
+      <h1 class="hero-title" id="hero-title">
+        Audit, Gate & Enforce AWS Security <br>
+        <span class="gradient-text">Before You Log Out.</span>
+      </h1>
+
+      <p class="hero-subtitle" id="hero-subtitle">
+        CloudGate 2.0 connects to your live AWS account in read-only mode to audit IAM root keys, open ports, public S3 buckets, IMDSv2, KMS, and VPC Flow Logs. Dual-engine architecture with instant 3-second gates and deep Prowler compliance standards.
+      </p>
+
+      <!-- Primary Download Card / Call to Action -->
+      <div class="hero-actions" id="hero-actions">
+        <a href="downloads/cloudgate-v2.0.0.tar.gz" class="btn btn-lg btn-gradient" id="btn-hero-download" download="cloudgate-v2.0.0.tar.gz">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <div class="btn-text-group">
+            <span class="btn-main-text">Download CloudGate 2.0</span>
+            <span class="btn-sub-text" id="detected-os-badge">Detected: Linux / Unix • .tar.gz (23 KB)</span>
+
+          </div>
+        </a>
+
+        <a href="#downloads" class="btn btn-lg btn-glass" id="btn-hero-all-platforms">
+          <span>All Platforms & Formats</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- 1-Click Install Command Box -->
+      <div class="quick-install-box" id="quick-install-box">
+        <div class="quick-install-header">
+          <span class="terminal-tag">⚡ Quick 1-Line Terminal Install</span>
+          <span class="terminal-os">Linux & macOS</span>
+        </div>
+        <div class="command-bar">
+          <span class="cmd-prompt">$</span>
+          <code class="cmd-text" id="quick-cmd">tar -xzf cloudgate-v2.0.0.tar.gz && cd cloudgate && ./install.sh</code>
+          <button class="btn-copy" id="btn-copy-quick" title="Copy to clipboard" onclick="copyCommand('quick-cmd', 'btn-copy-quick')">
+            <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+            <span class="copy-status">Copy</span>
+          </button>
+        </div>
+      </div>
+
+
+      <!-- Stats Bar -->
+      <div class="hero-stats" id="hero-stats">
+        <div class="stat-item">
+          <div class="stat-value">~3s</div>
+          <div class="stat-label">Fast Gate Speed</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-value">89+</div>
+          <div class="stat-label">AWS Services Scanned</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-value">0 Writes</div>
+          <div class="stat-label">100% Read-Only Safety</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-value">CIS 3.0</div>
+          <div class="stat-label">Standard Benchmark</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Terminal Simulator Section -->
+  <section class="section terminal-section" id="terminal-demo">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Interactive Terminal Output</div>
+        <h2 class="section-title">See CloudGate in Real-Time Action</h2>
+        <p class="section-subtitle">Switch tabs below to inspect how CloudGate renders real findings, remediation commands, and gatekeeper verdicts.</p>
+      </div>
+
+      <div class="terminal-window" id="terminal-window">
+        <div class="terminal-titlebar">
+          <div class="window-controls">
+            <span class="control-dot close"></span>
+            <span class="control-dot minimize"></span>
+            <span class="control-dot maximize"></span>
+          </div>
+          <div class="terminal-title">cloudgate@auditor:~ (AWS Security Audit Engine)</div>
+          <div class="terminal-actions">
+            <span class="badge-live">● LIVE PREVIEW</span>
+          </div>
+        </div>
+
+        <div class="terminal-tabs">
+          <button class="terminal-tab active" onclick="switchTerminalTab('tab-fast')" id="tab-btn-fast">
+            <span>Fast Gate (~3s)</span>
+          </button>
+          <button class="terminal-tab" onclick="switchTerminalTab('tab-auth')" id="tab-btn-auth">
+            <span>First-Time Setup (Auth) ⚡</span>
+          </button>
+          <button class="terminal-tab" onclick="switchTerminalTab('tab-hybrid')" id="tab-btn-hybrid">
+            <span>Hybrid Audit (Prowler)</span>
+          </button>
+          <button class="terminal-tab" onclick="switchTerminalTab('tab-cis')" id="tab-btn-cis">
+            <span>CIS Benchmark 3.0</span>
+          </button>
+          <button class="terminal-tab" onclick="switchTerminalTab('tab-menu')" id="tab-btn-menu">
+            <span>Interactive Menu (-i)</span>
+          </button>
+        </div>
+
+
+        <div class="terminal-body" id="terminal-body">
+          <!-- Fast Gate Output View -->
+          <div class="terminal-screen active" id="tab-fast">
+            <div class="t-line prompt-line"><span class="t-user">secops@terminal</span>:<span class="t-path">~/cloudgate</span>$ <span class="t-cmd">cloudgate</span></div>
+            <div class="t-banner">
+ <span class="t-cyan">██████╗██╗      ██████╗ ██╗   ██╗██████╗  ██████╗  █████╗ ████████╗███████╗</span>
+<span class="t-cyan">██╔════╝██║     ██╔═══██╗██║   ██║██╔══██╗██╔════╝ ██╔══██╗╚══██╔══╝██╔════╝</span>
+<span class="t-cyan">██║     ██║     ██║   ██║██║   ██║██║  ██║██║  ███╗███████║   ██║   █████╗  </span>
+<span class="t-cyan">██║     ██║     ██║   ██║██║   ██║██║  ██║██║   ██║██╔══██║   ██║   ██╔══╝  </span>
+<span class="t-cyan">╚██████╗███████╗╚██████╔╝╚██████╔╝██████╔╝╚██████╔╝██║  ██║   ██║   ███████╗</span>
+            </div>
+            <div class="t-line t-bold">Next-Gen AWS Security & Compliance Gatekeeper • v2.0</div>
+            <div class="t-line t-dim">Engine Mode: Fast Pre-Logout Gate</div>
+            <div class="t-box">
+              <div>🔑 <span class="t-blue">Account ID:</span>   <span class="t-cyan">1234****9012</span></div>
+              <div>👤 <span class="t-blue">Identity ARN:</span> <span class="t-yellow">arn:aws:iam::1234****9012:root</span></div>
+              <div>🌐 <span class="t-blue">AWS Region:</span>   <span class="t-green">us-east-1</span></div>
+              <div>💼 <span class="t-blue">Profile:</span>      <span class="t-magenta">default</span> (Fast Pre-Logout Gate)</div>
+            </div>
+            <div class="t-line">[*] Checking IAM roles, S3 exposure, open ports, EC2 IMDSv2, KMS, VPC...</div>
+            <div class="t-table">
+              <div class="t-row t-header">
+                <span class="col-num">#</span>
+                <span class="col-sev">Severity</span>
+                <span class="col-cat">Category</span>
+                <span class="col-desc">Finding & Risk Impact</span>
+              </div>
+              <div class="t-row">
+                <span class="col-num">1</span>
+                <span class="badge-sev sev-crit">CRITICAL</span>
+                <span class="col-cat t-cyan">IAM</span>
+                <span class="col-desc">Root account has active CLI access keys — root should never have programmatic keys</span>
+              </div>
+              <div class="t-row">
+                <span class="col-num">2</span>
+                <span class="badge-sev sev-high">HIGH</span>
+                <span class="col-cat t-cyan">LOGGING</span>
+                <span class="col-desc">No CloudTrail trail configured — no audit log of API activity in this account</span>
+              </div>
+              <div class="t-row">
+                <span class="col-num">3</span>
+                <span class="badge-sev sev-high">HIGH</span>
+                <span class="col-cat t-cyan">IAM</span>
+                <span class="col-desc">IAM user 'contractor_dev' has console password access but no MFA enabled</span>
+              </div>
+            </div>
+            <div class="t-verdict-box blocked">
+              <div class="verdict-title">🛑 GATE BLOCKED — DO NOT LOG OUT</div>
+              <div>Account security posture has 3 blocking defect(s)! (CRITICAL: 1 | HIGH: 2)</div>
+              <div class="t-dim">Resolve active root keys or missing audit trails before ending session.</div>
+            </div>
+          </div>
+
+          <!-- First-Time Setup / Auth Screen -->
+          <div class="terminal-screen" id="tab-auth">
+            <div class="t-line prompt-line"><span class="t-user">secops@terminal</span>:<span class="t-path">~/cloudgate</span>$ <span class="t-cmd">cloudgate</span></div>
+            <div class="t-box" style="border-color: rgba(250, 204, 21, 0.4); background: rgba(250, 204, 21, 0.04);">
+              <div class="t-bold t-yellow">🔑 First-Time Setup: AWS Credentials Required</div>
+              <div>CloudGate needs read-only AWS credentials to audit your cloud environment.</div>
+              <div class="t-dim">No existing credentials found in ~/.aws/credentials or environment variables.</div>
+            </div>
+            <div class="t-line">Configure AWS credentials now? [Y/n]: <span class="t-green t-bold">Y</span></div>
+            <div class="t-box">
+              <div>Enter AWS Access Key ID (e.g. AKIA...): <span class="t-cyan">AKIAIOSFODNN7EXAMPLE</span></div>
+              <div>Enter AWS Secret Access Key: <span class="t-dim">••••••••••••••••••••••••••••••••••••••••</span></div>
+              <div>Enter Default AWS Region [us-east-1]: <span class="t-green">us-east-1</span></div>
+              <div>Enter AWS Session Token (optional, press Enter to skip): <span class="t-dim">&lt;skipped&gt;</span></div>
+            </div>
+            <div class="t-line t-green">[✓] AWS credentials for [default] successfully saved in ~/.aws/credentials (mode 0600)!</div>
+            <div class="t-line">[*] Authenticated as: <span class="t-yellow">arn:aws:iam::1234****9012:user/auditor</span></div>
+            <div class="t-line">[*] Account: <span class="t-cyan">1234****9012</span> | Region: <span class="t-green">us-east-1</span></div>
+            <div class="t-line t-green">[*] Launching Fast Gate checks...</div>
+          </div>
+
+          <!-- Hybrid Screen -->
+          <div class="terminal-screen" id="tab-hybrid">
+
+            <div class="t-line prompt-line"><span class="t-user">secops@terminal</span>:<span class="t-path">~/cloudgate</span>$ <span class="t-cmd">cloudgate --hybrid</span></div>
+            <div class="t-line t-green">[*] Native Fast Gate checks passed.</div>
+            <div class="t-line t-cyan">[*] Launching Prowler Security Audit — Core Posture (IAM, S3, EC2, KMS, VPC, CloudTrail)</div>
+            <div class="t-line">[*] Analyzing CIS 3.0 & NIST 800-53 cross-compliance mapping...</div>
+            <div class="t-box">
+              <div>📊 <span class="t-bold t-green">Interactive Prowler HTML Dashboard:</span> <span class="t-underline">file://reports/prowler_audit.html</span></div>
+              <div>👉 <span class="t-yellow">Open with:</span> xdg-open "reports/prowler_audit.html"</div>
+            </div>
+            <div class="t-verdict-box blocked">
+              <div class="verdict-title">🛑 GATE BLOCKED — 4 BLOCKING DEFECTS FOUND</div>
+              <div>CRITICAL: 1 | HIGH: 3 | MEDIUM: 12 | LOW: 4</div>
+            </div>
+          </div>
+
+          <!-- CIS Screen -->
+          <div class="terminal-screen" id="tab-cis">
+            <div class="t-line prompt-line"><span class="t-user">secops@terminal</span>:<span class="t-path">~/cloudgate</span>$ <span class="t-cmd">cloudgate --compliance cis_3.0_aws</span></div>
+            <div class="t-line t-cyan">[*] Auditing account 1234****9012 against CIS AWS Foundations Benchmark v3.0...</div>
+            <div class="t-line">[-] 1.10 Ensure MFA is enabled for all IAM users with console password [FAIL]</div>
+            <div class="t-line">[-] 2.4  Ensure no root account access keys exist [FAIL]</div>
+            <div class="t-line">[-] 3.1  Ensure CloudTrail is enabled in all regions [FAIL]</div>
+            <div class="t-line t-green">[+] 4.1  Ensure no security groups allow 0.0.0.0/0 to port 22/3389 [PASS]</div>
+            <div class="t-box">
+              <div>Detailed CIS 3.0 Compliance Report saved to reports/prowler_compliance_cis3.html</div>
+            </div>
+          </div>
+
+          <!-- Interactive Menu Screen -->
+          <div class="terminal-screen" id="tab-menu">
+            <div class="t-line prompt-line"><span class="t-user">secops@terminal</span>:<span class="t-path">~/cloudgate</span>$ <span class="t-cmd">cloudgate -i</span></div>
+            <div class="t-box">
+              <div class="t-bold t-cyan">CloudGate 2.0 — Security Audit Level Selection</div>
+              <div>1. [Level 1: Fast Gate]       Quick pre-logout security scan (~3s)</div>
+              <div>2. [Level 2: Core Posture]    Core checks (IAM, S3, EC2, KMS, VPC, Logging)</div>
+              <div>3. [Level 3: CIS Benchmark]   CIS AWS Foundations Benchmark v3.0</div>
+              <div>4. [Level 4: ThreatScore]     Prowler ThreatScore & Attack-Path Analysis</div>
+              <div>5. [Level 5: Full Enterprise] Complete audit across all 89 AWS services</div>
+              <div>6. [Hybrid Engine]            Fast Gate + Core Prowler Audit + HTML Report</div>
+            </div>
+            <div class="t-line">Select an option [1-6] (default: 1): <span class="t-yellow">6</span></div>
+            <div class="t-line t-green">[*] Starting Hybrid Gatekeeper...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real-Time Functioning Services Section -->
+  <section class="section features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Audited AWS Services</div>
+        <h2 class="section-title">Real-Time Functioning AWS Security Services</h2>
+        <p class="section-subtitle">Every check connects to live AWS APIs in read-only mode to extract ground-truth configurations. No sample data, no simulations, zero writes.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- 1. IAM & Root Hygiene -->
+        <div class="service-card" id="service-iam">
+          <div class="service-header">
+            <div class="service-icon-title">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <circle cx="12" cy="11" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="service-title">AWS IAM & Root Hygiene</h3>
+              </div>
+            </div>
+            <div class="service-status-pill">
+              <span class="service-status-dot"></span>
+              <span>LIVE AUDIT</span>
+            </div>
+          </div>
+          <p class="service-desc">Audits account-level identity perimeter, credential hygiene, and privileged policy attachments to block initial access vectors.</p>
+          <div class="service-api-box">
+            <span class="api-label">Live API:</span>
+            <span class="api-name">iam:GetAccountSummary, GetCredentialReport</span>
+          </div>
+          <ul class="service-checklist">
+            <li>Root account active CLI access keys <span class="badge-crit">CRITICAL</span></li>
+            <li>Root account lacking multi-factor authentication (MFA) <span class="badge-crit">CRITICAL</span></li>
+            <li>IAM console users without MFA enforced <span class="badge-high">HIGH</span></li>
+            <li>Inactive console passwords (>45 days) & unused access keys</li>
+            <li>Over-privileged roles with <code>AdministratorAccess</code> or <code>*/*</code></li>
+          </ul>
+        </div>
+
+        <!-- 2. Amazon S3 -->
+        <div class="service-card" id="service-s3">
+          <div class="service-header">
+            <div class="service-icon-title">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                  <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="service-title">Amazon S3 Storage Security</h3>
+              </div>
+            </div>
+            <div class="service-status-pill">
+              <span class="service-status-dot"></span>
+              <span>LIVE AUDIT</span>
+            </div>
+          </div>
+          <p class="service-desc">Inspects public bucket exposures, access control lists, and cryptographic enforcement across all buckets in the account.</p>
+          <div class="service-api-box">
+            <span class="api-label">Live API:</span>
+            <span class="api-name">s3:ListBuckets, GetPublicAccessBlock</span>
+          </div>
+          <ul class="service-checklist">
+            <li>S3 Block Public Access (BPA) missing or partially disabled <span class="badge-high">HIGH</span></li>
+            <li>Public bucket policies or wildcard read/write ACLs <span class="badge-crit">CRITICAL</span></li>
+            <li>Buckets lacking default Server-Side Encryption (SSE-S3 / SSE-KMS)</li>
+            <li>Audit of bucket ownership controls & object lock retention</li>
+          </ul>
+        </div>
+
+        <!-- 3. EC2 & IMDSv2 -->
+        <div class="service-card" id="service-ec2">
+          <div class="service-header">
+            <div class="service-icon-title">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                  <line x1="6" y1="6" x2="6.01" y2="6"/>
+                  <line x1="6" y1="18" x2="6.01" y2="18"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="service-title">EC2 & IMDSv2 Metadata</h3>
+              </div>
+            </div>
+            <div class="service-status-pill">
+              <span class="service-status-dot"></span>
+              <span>LIVE AUDIT</span>
+            </div>
+          </div>
+          <p class="service-desc">Detects the exact root-cause architecture of major cloud breaches: internet-facing instances combined with attached IAM roles.</p>
+          <div class="service-api-box">
+            <span class="api-label">Live API:</span>
+            <span class="api-name">ec2:DescribeInstances (MetadataOptions)</span>
+          </div>
+          <ul class="service-checklist">
+            <li>Public IP instance with attached IAM Instance Profile <span class="badge-crit">CRITICAL</span></li>
+            <li>Tokenless IMDSv1 enabled (vulnerable to SSRF credential theft) <span class="badge-crit">CRITICAL</span></li>
+            <li>Enforces <code>HttpTokens='required'</code> (IMDSv2 session tokens)</li>
+            <li>Flags unencrypted EBS volumes & exposed compute instances</li>
+          </ul>
+        </div>
+
+        <!-- 4. Security Groups & Ports -->
+        <div class="service-card" id="service-ports">
+          <div class="service-header">
+            <div class="service-icon-title">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="service-title">VPC Security Groups & Ports</h3>
+              </div>
+            </div>
+            <div class="service-status-pill">
+              <span class="service-status-dot"></span>
+              <span>LIVE AUDIT</span>
+            </div>
+          </div>
+          <p class="service-desc">Reads security group rules via the AWS API to detect dangerous inbound rules. Zero network packets or port scans are transmitted.</p>
+          <div class="service-api-box">
+            <span class="api-label">Live API:</span>
+            <span class="api-name">ec2:DescribeSecurityGroups (IpPermissions)</span>
+          </div>
+          <ul class="service-checklist">
+            <li>Management ports open to <code>0.0.0.0/0</code> (SSH 22, RDP 3389) <span class="badge-crit">CRITICAL</span></li>
+            <li>All ports/protocols exposed to the world (<code>protocol -1</code>) <span class="badge-crit">CRITICAL</span></li>
+            <li>Exposed databases: MySQL 3306, Postgres 5432, Redis 6379, Mongo 27017</li>
+            <li>Generates exact <code>aws ec2 revoke-security-group-ingress</code> commands</li>
+          </ul>
+        </div>
+
+        <!-- 5. KMS Key Governance -->
+        <div class="service-card" id="service-kms">
+          <div class="service-header">
+            <div class="service-icon-title">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 2l-2 2m-1-1l-3 3m5 0l-3-3m-6 6l7 7-4 4-7-7V3h6z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="service-title">AWS KMS Key Governance</h3>
+              </div>
+            </div>
+            <div class="service-status-pill">
+              <span class="service-status-dot"></span>
+              <span>LIVE AUDIT</span>
+            </div>
+          </div>
+          <p class="service-desc">Audits cryptographic keys and automated lifecycle governance across Customer Managed Keys (CMKs).</p>
+          <div class="service-api-box">
+            <span class="api-label">Live API:</span>
+            <span class="api-name">kms:ListKeys, GetKeyRotationStatus</span>
+          </div>
+          <ul class="service-checklist">
+            <li>Customer Managed Keys without automatic annual rotation enabled</li>
+            <li>Disabled or scheduled-for-deletion active encryption keys</li>
+            <li>Overly broad key policies allowing unauthorized cross-account decrypt</li>
+            <li>Provides direct <code>aws kms enable-key-rotation</code> remediations</li>
+          </ul>
+        </div>
+
+        <!-- 6. VPC Flow Logs -->
+        <div class="service-card" id="service-vpc">
+          <div class="service-header">
+            <div class="service-icon-title">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="16" y="16" width="6" height="6" rx="1"/>
+                  <rect x="2" y="16" width="6" height="6" rx="1"/>
+                  <rect x="9" y="2" width="6" height="6" rx="1"/>
+                  <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/>
+                  <path d="M12 12V8"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="service-title">VPC Network Telemetry</h3>
+              </div>
+            </div>
+            <div class="service-status-pill">
+              <span class="service-status-dot"></span>
+              <span>LIVE AUDIT</span>
+            </div>
+          </div>
+          <p class="service-desc">Verifies network monitoring coverage to prevent unobserved lateral movement and data exfiltration channels.</p>
+          <div class="service-api-box">
+            <span class="api-label">Live API:</span>
+            <span class="api-name">ec2:DescribeVpcs, DescribeFlowLogs</span>
+          </div>
+          <ul class="service-checklist">
+            <li>VPCs operating without active VPC Flow Logs (network blind spots)</li>
+            <li>Default VPC posture and unused subnet hygiene</li>
+            <li>Flow log capture status (ALL traffic vs ACCEPT/REJECT filters)</li>
+            <li>CloudWatch Logs & S3 log destination delivery verification</li>
+          </ul>
+        </div>
+
+        <!-- 7. CloudTrail Audit -->
+        <div class="service-card" id="service-cloudtrail">
+          <div class="service-header">
+            <div class="service-icon-title">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="service-title">CloudTrail Audit Logging</h3>
+              </div>
+            </div>
+            <div class="service-status-pill">
+              <span class="service-status-dot"></span>
+              <span>LIVE AUDIT</span>
+            </div>
+          </div>
+          <p class="service-desc">Ensures immutable forensic evidence is recorded for every AWS API call made across all active and inactive regions.</p>
+          <div class="service-api-box">
+            <span class="api-label">Live API:</span>
+            <span class="api-name">cloudtrail:DescribeTrails (Status & MultiRegion)</span>
+          </div>
+          <ul class="service-checklist">
+            <li>Zero CloudTrail trails active in connected account <span class="badge-high">HIGH</span></li>
+            <li>Single-region trails allowing activity in other regions to go unlogged</li>
+            <li>Log file integrity validation (cryptographic hash verification)</li>
+            <li>S3 storage bucket logging and access protection</li>
+          </ul>
+        </div>
+
+        <!-- 8. GuardDuty Detection -->
+        <div class="service-card" id="service-guardduty">
+          <div class="service-header">
+            <div class="service-icon-title">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="service-title">GuardDuty Threat Detection</h3>
+              </div>
+            </div>
+            <div class="service-status-pill">
+              <span class="service-status-dot"></span>
+              <span>LIVE AUDIT</span>
+            </div>
+          </div>
+          <p class="service-desc">Checks whether automated machine learning threat detection is actively monitoring VPC flow, DNS, and management events.</p>
+          <div class="service-api-box">
+            <span class="api-label">Live API:</span>
+            <span class="api-name">guardduty:ListDetectors (Active Status)</span>
+          </div>
+          <ul class="service-checklist">
+            <li>GuardDuty detector enabled / disabled across target regions</li>
+            <li>Handles subscription and opt-in states gracefully</li>
+            <li>Continuous monitoring for compromised IAM credentials</li>
+            <li>Detection of unauthorized cryptocurrency mining or port scans</li>
+          </ul>
+        </div>
+
+        <!-- 9. CIS AWS Foundations Benchmark 3.0 -->
+        <div class="service-card" id="service-cis">
+          <div class="service-header">
+            <div class="service-icon-title">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="service-title">CIS Benchmark 3.0 (Prowler)</h3>
+              </div>
+            </div>
+            <div class="service-status-pill">
+              <span class="service-status-dot"></span>
+              <span>COMPLIANCE</span>
+            </div>
+          </div>
+          <p class="service-desc">Orchestrates Prowler 5.40 to execute deep compliance audits against official Center for Internet Security benchmarks.</p>
+          <div class="service-api-box">
+            <span class="api-label">Compliance:</span>
+            <span class="api-name">CIS AWS Foundations Benchmark v3.0</span>
+          </div>
+          <ul class="service-checklist">
+            <li>Full audit across Identity, Storage, Logging, Monitoring, & Network</li>
+            <li>Password complexity, reuse prevention, and 90-day credential rotation</li>
+            <li>Generates visual, interactive HTML dashboard reports automatically</li>
+            <li>Cross-framework mapping to NIST 800-53, ISO 27001, and PCI-DSS 4.0</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Matrix Section -->
+  <section class="section download-section" id="downloads">
+
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Direct Downloads & Packages</div>
+        <h2 class="section-title">Download CloudGate for Any Platform</h2>
+        <p class="section-subtitle">Lightweight, portable, and non-destructive. Pick your operating system below to download the package or copy installation commands.</p>
+      </div>
+
+      <div class="download-grid">
+        <!-- Linux Card -->
+        <div class="download-card featured" id="card-linux">
+          <div class="card-badge">Most Popular</div>
+          <div class="os-header">
+            <div class="os-icon linux-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="os-title">Linux</h3>
+              <p class="os-distros">Ubuntu, Debian, Kali, RHEL, Fedora, Arch</p>
+            </div>
+          </div>
+
+          <div class="meta-specs">
+            <div class="spec-row">
+              <span class="spec-label">Format:</span>
+              <span class="spec-val tag-format">.tar.gz Archive</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Download Size:</span>
+              <span class="spec-val tag-size">23 KB (Ultra-Light)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Dependencies:</span>
+              <span class="spec-val">Python 3.10+ & Pip</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Global Command:</span>
+              <span class="spec-val t-cyan">cloudgate</span>
+            </div>
+          </div>
+
+          <a href="downloads/cloudgate-v2.0.0.tar.gz" class="btn btn-block btn-primary" download="cloudgate-v2.0.0.tar.gz" id="btn-download-linux">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span>Download .tar.gz (23 KB)</span>
+          </a>
+
+          <div class="card-cmd-snippet">
+            <div class="snippet-label">Or 1-Click Install:</div>
+            <div class="snippet-box">
+              <code id="cmd-linux-snippet">tar -xzf cloudgate-v2.0.0.tar.gz && ./install.sh</code>
+              <button class="btn-copy-mini" onclick="copyCommand('cmd-linux-snippet', this)">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- macOS Card -->
+        <div class="download-card" id="card-macos">
+          <div class="os-header">
+            <div class="os-icon apple-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 .6-2.65 1.35-.58.67-1.08 1.74-.95 2.77.99.08 2.05-.51 2.68-1.27z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="os-title">macOS</h3>
+              <p class="os-distros">Apple Silicon (M1/M2/M3) & Intel</p>
+            </div>
+          </div>
+
+          <div class="meta-specs">
+            <div class="spec-row">
+              <span class="spec-label">Format:</span>
+              <span class="spec-val tag-format">.zip Archive / .tar.gz</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Download Size:</span>
+              <span class="spec-val tag-size">31 KB (.zip) / 23 KB</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Dependencies:</span>
+              <span class="spec-val">Python 3.10+ (via brew/xcode)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Terminal:</span>
+              <span class="spec-val">Zsh / Bash</span>
+            </div>
+          </div>
+
+          <a href="downloads/cloudgate-v2.0.0.zip" class="btn btn-block btn-secondary" download="cloudgate-v2.0.0.zip" id="btn-download-macos">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span>Download .zip (31 KB)</span>
+          </a>
+
+          <div class="card-cmd-snippet">
+            <div class="snippet-label">Terminal Quick Install:</div>
+            <div class="snippet-box">
+              <code id="cmd-mac-snippet">unzip cloudgate-v2.0.0.zip && ./install.sh</code>
+              <button class="btn-copy-mini" onclick="copyCommand('cmd-mac-snippet', this)">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Docker Card -->
+        <div class="download-card" id="card-docker">
+          <div class="os-header">
+            <div class="os-icon docker-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186m5.893 2.714h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186H8.1a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H5.136a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.185m-2.928 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H2.208a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="os-title">Docker</h3>
+              <p class="os-distros">Zero Local Python Setup Needed</p>
+            </div>
+          </div>
+
+          <div class="meta-specs">
+            <div class="spec-row">
+              <span class="spec-label">Format:</span>
+              <span class="spec-val tag-format">Container Image (OCI)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Bundled Tools:</span>
+              <span class="spec-val tag-size">Prowler 5.40 + AWS CLI</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Requirements:</span>
+              <span class="spec-val">Docker Desktop / Engine</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Volume:</span>
+              <span class="spec-val">Mounts ~/.aws in read-only</span>
+            </div>
+          </div>
+
+          <div class="snippet-box cmd-block">
+            <code id="cmd-docker-run">docker run --rm -v ~/.aws:/root/.aws:ro -v $(pwd)/reports:/app/reports cloudgate --hybrid</code>
+            <button class="btn-copy-mini" onclick="copyCommand('cmd-docker-run', this)">Copy</button>
+          </div>
+
+          <a href="Dockerfile" class="btn btn-block btn-outline" download="Dockerfile" id="btn-download-dockerfile">
+            <span>Download Dockerfile</span>
+          </a>
+        </div>
+
+        <!-- Windows WSL2 Card -->
+        <div class="download-card" id="card-windows">
+          <div class="os-header">
+            <div class="os-icon windows-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.551H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="os-title">Windows</h3>
+              <p class="os-distros">WSL2 (Ubuntu) or Native PowerShell</p>
+            </div>
+          </div>
+
+          <div class="meta-specs">
+            <div class="spec-row">
+              <span class="spec-label">Format:</span>
+              <span class="spec-val tag-format">.zip Archive</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Download Size:</span>
+              <span class="spec-val tag-size">31 KB (.zip)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Best Way:</span>
+              <span class="spec-val">WSL2 (Recommended)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Terminal:</span>
+              <span class="spec-val">PowerShell 7 / Bash</span>
+            </div>
+          </div>
+
+          <a href="downloads/cloudgate-v2.0.0.zip" class="btn btn-block btn-secondary" download="cloudgate-v2.0.0.zip" id="btn-download-win">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span>Download .zip for Windows (31 KB)</span>
+          </a>
+
+          <div class="card-cmd-snippet">
+            <div class="snippet-label">In WSL2 Terminal:</div>
+            <div class="snippet-box">
+              <code id="cmd-win-snippet">unzip cloudgate-v2.0.0.zip && ./install.sh</code>
+              <button class="btn-copy-mini" onclick="copyCommand('cmd-win-snippet', this)">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Testing Levels Section -->
+  <section class="section levels-section" id="levels">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Tiered Posture Evaluation</div>
+        <h2 class="section-title">5 Granular Security Testing Levels</h2>
+        <p class="section-subtitle">Choose the appropriate auditing depth — from lightweight pre-logout git gates to complete enterprise audits.</p>
+      </div>
+
+      <div class="levels-container">
+        <!-- Level 1 -->
+        <div class="level-card" id="level-card-1">
+          <div class="level-badge l1">LEVEL 1</div>
+          <h3 class="level-name">Fast Pre-Logout Gate</h3>
+          <div class="level-speed">⚡ ~3 Seconds Scan Time</div>
+          <p class="level-desc">Targeted checks for critical misconfigurations that lead directly to account compromise before developers or admins log out.</p>
+          <ul class="level-list">
+            <li>Root account active CLI access keys</li>
+            <li>Security groups open to 0.0.0.0/0 on SSH/RDP</li>
+            <li>Public S3 buckets & missing encryption</li>
+            <li>EC2 public IP + attached role (SSRF exposure)</li>
+            <li>IMDSv2 enforcement check</li>
+          </ul>
+          <div class="level-cmd"><code>cloudgate --level 1</code></div>
+        </div>
+
+        <!-- Level 2 -->
+        <div class="level-card" id="level-card-2">
+          <div class="level-badge l2">LEVEL 2</div>
+          <h3 class="level-name">Core Posture Scan</h3>
+          <div class="level-speed">⏱️ ~30 Seconds Scan Time</div>
+          <p class="level-desc">Expands into encryption governance, network telemetry, and core Prowler service audits.</p>
+          <ul class="level-list">
+            <li>KMS Customer Managed Key rotation status</li>
+            <li>VPC Flow Logs active telemetry</li>
+            <li>CloudTrail multi-region active coverage</li>
+            <li>IAM console users without MFA</li>
+            <li>GuardDuty automated threat detection</li>
+          </ul>
+          <div class="level-cmd"><code>cloudgate --level 2</code></div>
+        </div>
+
+        <!-- Level 3 -->
+        <div class="level-card featured" id="level-card-3">
+          <div class="card-badge">Industry Standard</div>
+          <div class="level-badge l3">LEVEL 3</div>
+          <h3 class="level-name">CIS AWS Benchmark 3.0</h3>
+          <div class="level-speed">🔍 ~60 Seconds Scan Time</div>
+          <p class="level-desc">Audits your entire cloud environment against the official Center for Internet Security (CIS) Foundations Benchmark v3.0.</p>
+          <ul class="level-list">
+            <li>Complete CIS 3.0 compliance scorecard</li>
+            <li>Password complexity, reuse & rotation rules</li>
+            <li>Default VPC restrictions and network ACLs</li>
+            <li>Least privilege audit roles & separation of duties</li>
+            <li>Automated interactive HTML dashboard</li>
+          </ul>
+          <div class="level-cmd"><code>cloudgate --compliance cis_3.0_aws</code></div>
+        </div>
+
+        <!-- Level 4 -->
+        <div class="level-card" id="level-card-4">
+          <div class="level-badge l4">LEVEL 4</div>
+          <h3 class="level-name">ThreatScore & Attack Paths</h3>
+          <div class="level-speed">🎯 ~60 Seconds Scan Time</div>
+          <p class="level-desc">Simulates attack vectors, privilege escalation chains, and ransomware blast radius.</p>
+          <ul class="level-list">
+            <li>Prowler ThreatScore risk modeling</li>
+            <li>Ransomware defense & AWS Backup compliance</li>
+            <li>Unused credentials & inactive console accounts</li>
+            <li>Cross-account role trust exposure</li>
+            <li>AI service protections (Amazon Bedrock logging)</li>
+          </ul>
+          <div class="level-cmd"><code>cloudgate --level 4</code></div>
+        </div>
+
+        <!-- Level 5 -->
+        <div class="level-card" id="level-card-5">
+          <div class="level-badge l5">LEVEL 5</div>
+          <h3 class="level-name">Full Enterprise Audit</h3>
+          <div class="level-speed">🌐 ~2-3 Minutes Scan Time</div>
+          <p class="level-desc">Exhaustive audit across all 89 AWS services in your account with detailed JSON and HTML outputs.</p>
+          <ul class="level-list">
+            <li>Sweep across Lambda, EKS, RDS, DynamoDB, SQS</li>
+            <li>WAF, API Gateway, CloudFront, Macie, Inspector</li>
+            <li>Multi-regulatory cross mapping (NIST, ISO27001, PCI)</li>
+            <li>Executive and technical HTML dashboards</li>
+          </ul>
+          <div class="level-cmd"><code>cloudgate --all-prowler</code></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step-by-Step Setup Guide & Permissions Section -->
+  <section class="section setup-section" id="setup">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">AWS Credentials & Setup Guide</div>
+        <h2 class="section-title">How Entering, Updating & Changing AWS Keys Works</h2>
+        <p class="section-subtitle">CloudGate is 100% client-side and read-only. Your AWS credentials are saved strictly on your local machine and never leave your environment.</p>
+      </div>
+
+      <!-- Privacy & Zero-Credentials Guarantee Banner -->
+      <div class="privacy-callout-box">
+        <div class="privacy-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <div class="privacy-text">
+          <h4>
+            <span>100% Client-Side Privacy & Zero-Credentials Guarantee</span>
+            <span class="privacy-badge">STRICT LOCAL SCOPE</span>
+          </h4>
+          <p>
+            The downloadable CloudGate tool contains <strong>zero AWS keys, tokens, or credentials</strong>. CloudGate executes 100% locally on your terminal and communicates directly with AWS STS & Cloud APIs via the official AWS Boto3 SDK. Your credentials are never uploaded, bundled, or shared with anyone.
+          </p>
+        </div>
+      </div>
+
+      <div class="setup-steps">
+        <!-- Step 1: First-Time Guided Prompt -->
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3 class="step-title">First-Time Guided Setup</h3>
+          <p class="step-desc">
+            When you run CloudGate for the first time without configured keys, it automatically detects it and launches an interactive credential prompt right in your terminal. Keys are saved to your local <code>~/.aws/credentials</code> with restricted <code>0600</code> permissions:
+          </p>
+          <div class="step-snippet">
+            <span class="snippet-comment"># Launches guided prompt on first run</span>
+            <code>cloudgate</code>
+          </div>
+          <p class="step-tip">
+            💡 Prompts for: Access Key ID, Secret Access Key, and Default Region.
+          </p>
+        </div>
+
+        <!-- Step 2: Updating / Rotating Keys -->
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Updating & Rotating Credentials</h3>
+          <p class="step-desc">
+            Need to rotate your AWS keys or enter new credentials after 90 days? Simply run the built-in configuration wizard anytime to re-enter your keys without altering other tools:
+          </p>
+          <div class="step-snippet">
+            <span class="snippet-comment"># Reconfigure or update active credentials</span>
+            <code>cloudgate --configure</code>
+          </div>
+          <p class="step-tip">
+            💡 Or use standard AWS CLI: <code>aws configure</code>
+          </p>
+        </div>
+
+        <!-- Step 3: Multi-Account & Profile Switching -->
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Switching Profiles & Accounts</h3>
+          <p class="step-desc">
+            Audit multiple AWS environments (e.g., Staging, Production, Audit) seamlessly without overwriting existing keys by using named AWS profiles or the interactive menu:
+          </p>
+          <div class="step-snippet">
+            <span class="snippet-comment"># Configure or audit a specific profile</span>
+            <code>cloudgate --configure --profile prod</code>
+            <code>cloudgate --profile prod --hybrid</code>
+          </div>
+          <p class="step-tip">
+            💡 Or launch interactive menu: <code>cloudgate -i</code> (Option 7)
+          </p>
+        </div>
+
+        <!-- Step 4: Safe Read-Only Permissions -->
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h3 class="step-title">Safe Read-Only IAM Role</h3>
+          <p class="step-desc">
+            CloudGate requires only read permissions (`describe_*`, `get_*`, `list_*`). Attach the AWS managed policy <strong>SecurityAudit</strong> or deploy our 1-click CloudFormation template:
+          </p>
+          <div class="step-snippet">
+            <span class="snippet-comment"># Deploy audit role with CloudFormation</span>
+            <code>aws cloudformation deploy --template-file deploy/cloudgate-audit-role.yml ...</code>
+          </div>
+          <p class="step-tip">
+            <a href="deploy/cloudgate-audit-role.yml" class="link-cfn" download="cloudgate-audit-role.yml">Download cloudgate-audit-role.yml</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ Section -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Frequently Asked Questions</div>
+        <h2 class="section-title">Everything You Need to Know</h2>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item active" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>Does the downloaded CloudGate tool contain or expose my AWS credentials?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <strong>No, absolutely never.</strong> Every archive and file distributed from this website is completely clean and contains zero AWS keys, tokens, account numbers, or personal data. CloudGate runs 100% locally on your computer and reads credentials exclusively from your local <code>~/.aws/credentials</code> file or environment variables. No keys or scan data are ever transmitted externally.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>How do I enter, update, or change my AWS credentials?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            When you launch CloudGate for the first time without credentials, it automatically starts its built-in interactive wizard asking for your <code>AWS Access Key ID</code>, <code>Secret Access Key</code>, and <code>Region</code>. To update expired keys or switch accounts later, simply run <code>cloudgate --configure</code> or choose option 7 in the interactive menu (<code>cloudgate -i</code>). You can also audit multiple accounts using <code>cloudgate --profile &lt;name&gt;</code>.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>Does CloudGate ever modify or write to my AWS account?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <strong>No, absolutely never.</strong> Every single check performed by CloudGate and Prowler is strictly a read-only AWS API call (`describe_*`, `get_*`, `list_*`). Security group checks read rules via the API — zero network packets are sent to any host.
+          </div>
+        </div>
+
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>What AWS permissions does CloudGate require?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            The scanning identity only requires AWS's standard managed <code>SecurityAudit</code> policy (or <code>ViewOnlyAccess</code>). You should <strong>never</strong> use <code>AdministratorAccess</code> to run security audits.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>How does the Prowler integration work?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            CloudGate 2.0 embeds Prowler as its next-stage engine. When you run <code>cloudgate --prowler</code> or <code>cloudgate --hybrid</code>, CloudGate orchestrates Prowler, scopes scans to your active AWS region for maximum speed, ingests the structured OCSF JSON output, deduplicates findings, and generates interactive visual HTML dashboards.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>Can I integrate CloudGate into CI/CD pipelines?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes! CloudGate exits with code <code>0</code> when gates pass and non-zero when critical or high risks exist, making it an ideal pre-merge or pre-logout gatekeeper in GitHub Actions, GitLab CI, or pre-commit hooks.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+          <span>CloudGate 2.0</span>
+        </div>
+        <p class="footer-desc">Real-Time AWS Security Gatekeeper & Compliance Engine. Open source under Apache 2.0.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Download</h4>
+          <a href="downloads/cloudgate-v2.0.0.tar.gz" download="cloudgate-v2.0.0.tar.gz">Linux (.tar.gz - 23 KB)</a>
+          <a href="downloads/cloudgate-v2.0.0.zip" download="cloudgate-v2.0.0.zip">macOS / Windows (.zip - 31 KB)</a>
+          <a href="Dockerfile" download="Dockerfile">Dockerfile</a>
+        </div>
+        <div class="footer-col">
+          <h4>Standards</h4>
+          <a href="#levels">CIS AWS Benchmark 3.0</a>
+          <a href="#levels">NIST 800-53 Rev 5</a>
+          <a href="#levels">Prowler ThreatScore</a>
+        </div>
+        <div class="footer-col">
+          <h4>Security</h4>
+          <a href="deploy/cloudgate-audit-role.yml" download="cloudgate-audit-role.yml">CloudFormation Role</a>
+          <a href="#faq">Read-Only Safety Scope</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <span>© 2026 CloudGate Project. Built for defensive AWS posture management.</span>
+        <span>Version 2.0.0 • Production Stable</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast for Copy actions -->
+  <div class="toast" id="toast">Command copied to clipboard!</div>
+
+  <script src="app.js"></script>
+</body>
+</html>

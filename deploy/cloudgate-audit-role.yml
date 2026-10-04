@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  CloudGate 2.0 - Read-Only Security Audit IAM Role.
+  Provisions a least-privilege scanning role using AWS managed SecurityAudit
+  policy for non-destructive cloud posture and compliance evaluations.
+
+Parameters:
+  AuditorPrincipalArn:
+    Type: String
+    Description: The ARN of the IAM user or role permitted to assume this audit role (e.g. arn:aws:iam::123456789012:user/auditor).
+    Default: ''
+
+Conditions:
+  HasExplicitPrincipal: !Not [!Equals [!Ref AuditorPrincipalArn, '']]
+
+Resources:
+  CloudGateAuditRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: CloudGateSecurityAuditRole
+      Description: Read-only security audit role for CloudGate and Prowler assessments
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: !If
+                - HasExplicitPrincipal
+                - !Ref AuditorPrincipalArn
+                - !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+            Action: 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - 'arn:aws:iam::aws:policy/SecurityAudit'
+        - 'arn:aws:iam::aws:policy/job-function/ViewOnlyAccess'
+      Tags:
+        - Key: Tool
+          Value: CloudGate
+        - Key: ManagedBy
+          Value: CloudFormation
+
+Outputs:
+  AuditRoleArn:
+    Description: The ARN of the CloudGate Audit Role to configure in ~/.aws/config
+    Value: !GetAtt CloudGateAuditRole.Arn
+    Export:
+      Name: CloudGateAuditRoleArn
